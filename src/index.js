@@ -33,7 +33,7 @@ class Jobs extends React.Component {
   }
 
   getPosts(category){
-     console.log(`fetching... ${this.state.category}`)
+     console.log(`fetching... ${category}`)
      axios.get(`https://careers.codeinstitute.net/job-listings/1?category=${category}&location=ireland&type=full-time`)
       .then(res => {
         const posts = res.data.data.map(obj => JSON.parse(obj))
