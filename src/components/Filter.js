@@ -15,7 +15,7 @@ class Filter extends React.Component {
             type="text" 
             name="keyword" 
           />
-          <Button color="primary">
+          <Button type="submit" color="primary">
             Filter
           </Button>
         </form>
