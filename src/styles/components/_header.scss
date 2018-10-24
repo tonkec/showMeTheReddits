@@ -1,0 +1,35 @@
+.header {
+	background-color: $green;
+	height: 50vh;
+	text-align: center;
+
+	.wrapper {
+		position: relative;
+		top: 50%;
+		-webkit-transform: translateY(-50%);
+		   -moz-transform: translateY(-50%);
+		    -ms-transform: translateY(-50%);
+		     -o-transform: translateY(-50%);
+		        transform: translateY(-50%);
+	}
+
+	h1 {
+		font-size: 50px;
+		margin-bottom:25px;
+		color: $white;
+	}
+}
+
+.search {
+	border: none;
+	border-radius: 3px;
+	padding: 10px;
+	width: 40%;
+	margin: 0 auto;
+	background-color: #fafafa;
+	font-size: 30px;
+
+	&:focus {
+		outline: none;
+	}
+}
