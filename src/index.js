@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Jobs from './components/Jobs';
+import Reddits from './components/Reddits';
 
 class CodingCareers extends React.Component {
   render(){
     return(
       <div>
-        <Jobs />
+        <Reddits />
       </div>
     )
   }

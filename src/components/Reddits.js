@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
-import Button from './Button';
+import Filter from './Filter';
 import SimpleExpansionPanel from './SimpleExpansionPanel';
 
-class Jobs extends React.Component {
+class Reddits extends React.Component {
   constructor(props) {
     super(props);
     this.getKeyword = this.getKeyword.bind(this);
@@ -13,7 +13,7 @@ class Jobs extends React.Component {
       posts: [],
       loading: true,
       error: null,
-      category:  ""
+      category:  "ruby"
     };
   }
 
@@ -28,16 +28,14 @@ class Jobs extends React.Component {
   }
 
   getPosts(category){
-     //console.log(`fetching... ${category}`)
-     axios.get(`https://careers.codeinstitute.net/job-listings/1?category=${category}&location=ireland&type=full-time`)
+    axios.get(`http://www.reddit.com/r/${category}.json`)
       .then(res => {
-        const posts = res.data.data.map(obj => JSON.parse(obj))
+        const posts = res.data.data.children.map(obj => obj.data)
         this.setState({
           posts: posts,
           loading: false,
           error: null
         });
-       // console.log(`fetched: ${res.data.data}`)
       })
       .catch(err => {
         this.setState({
@@ -76,12 +74,12 @@ class Jobs extends React.Component {
   render() {
     return (
       <div>
-        <Button keyword={this.getKeyword} />
-        <SimpleExpansionPanel posts = {this.state.posts} classes={{paper:"paper"}} />
+        <Filter />
+        <SimpleExpansionPanel posts = {this.state.posts} classes={{"paper":"paper"}} />
         {this.state.loading ? this.renderLoading() : this.renderPosts()}
       </div>
     );
   }
 }
 
-export default Jobs
+export default Reddits

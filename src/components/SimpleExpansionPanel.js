@@ -25,11 +25,13 @@ function SimpleExpansionPanel(props) {
     {props.posts.map(item =>
       <ExpansionPanel key={item.id}>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography className={classes.heading}>{item.role_title}</Typography>
+          <Typography className={classes.heading}>
+            <a href={`http://www.reddit.com/${item.permalink}`} target="_blank"> {item.title}</a>
+          </Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>
-            {item.job_description}
+            {item.selftext}
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
