@@ -30,7 +30,8 @@ class Reddits extends React.Component {
   getPosts(category){
     axios.get(`http://www.reddit.com/r/${category}.json`)
       .then(res => {
-        const posts = res.data.data.children.map(obj => obj.data)
+        const data = res.data.data.children.map(obj => obj.data);
+        const posts = data.filter(obj => obj.selftext !== "");
         this.setState({
           posts: posts,
           loading: false,
@@ -75,6 +76,7 @@ class Reddits extends React.Component {
     return (
       <div>
         <Filter keyword={this.getKeyword} />
+        <h1> {this.state.category} reddits </h1>
         <SimpleExpansionPanel posts = {this.state.posts} classes={{"paper":"paper"}} />
         {this.state.loading ? this.renderLoading() : this.renderPosts()}
       </div>
