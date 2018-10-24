@@ -1,6 +1,6 @@
 .header {
 	background-color: $green;
-	height: 50vh;
+	height: 60vh;
 	text-align: center;
 
 	.wrapper {
@@ -14,22 +14,43 @@
 	}
 
 	h1 {
-		font-size: 50px;
+		font-size: 45px;
 		margin-bottom:25px;
 		color: $white;
 	}
 }
 
-.search {
+.input-search {
 	border: none;
-	border-radius: 3px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
 	padding: 10px;
-	width: 40%;
+	width: 30%;
 	margin: 0 auto;
 	background-color: #fafafa;
-	font-size: 30px;
+	font-size:25px;
+	vertical-align: middle;
 
 	&:focus {
 		outline: none;
 	}
+}
+
+.btn-search {
+	cursor: pointer;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	padding: 0 25px;
+	border: none;
+	height: 50px;
+	background-color: $blue;
+	vertical-align: middle;
+	&:focus {
+		outline: none;
+	}
+}
+
+.fa-search {
+	font-size: 20px;
+	color: $white;
 }
