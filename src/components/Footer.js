@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 class Footer extends React.Component {
   render(){
     return(
-      <footer>
+      <footer className="footer">
         <h5> 
         	Made with love and coffee &copy;  
         	 <a href="https://github.com/tonkec" target="_blank">antonija_simic</a> 

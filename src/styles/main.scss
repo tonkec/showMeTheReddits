@@ -1,4 +1,8 @@
 @import "base/base";
 @import "base/palette";
 
+$footerHeight: 100px;
 @import "components/header";
+@import "components/footer";
+@import "components/section";
+

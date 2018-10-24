@@ -10,7 +10,6 @@ class Filter extends React.Component {
           <h1 className=""> Show me the reddits! </h1>
             <form onSubmit={this.props.keyword}>
               <input type="text" name="keyword" placeholder="Category" className="input-search" />
-
               <button type="submit" className="btn-search">
                 <FontAwesomeIcon icon="search" />
               </button>
