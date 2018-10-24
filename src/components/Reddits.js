@@ -77,7 +77,7 @@ class Reddits extends React.Component {
       <div>
         <Filter keyword={this.getKeyword} />
         <h1> {this.state.category} reddits </h1>
-        <SimpleExpansionPanel posts = {this.state.posts} classes={{"paper":"paper"}} />
+        <SimpleExpansionPanel posts = {this.state.posts} />
         {this.state.loading ? this.renderLoading() : this.renderPosts()}
       </div>
     );
