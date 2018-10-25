@@ -7,3 +7,39 @@
    background-color: $yellow;
    height: $footerHeight;
 }
+
+.footer-container {
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	   -moz-transform: translateY(-50%);
+	    -ms-transform: translateY(-50%);
+	     -o-transform: translateY(-50%);
+	        transform: translateY(-50%);
+  position: relative;
+  text-align: center;
+}
+
+.footer-heading {
+	color: $white;
+	margin-bottom: 20px;
+	font-size: 25px;
+}
+
+.fa-heart, .fa-coffee {
+	font-size: 30px;
+}
+
+.fa-coffee {
+	color: $blue;
+}
+
+.fa-heart {
+	color: $red;
+}
+.footer-anchor {
+	text-decoration: none
+}
+
+.footer-anchor, .copyright {
+	color: $blue;
+}
