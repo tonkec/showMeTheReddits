@@ -24,20 +24,23 @@ const styles = theme => ({
 });
 
 class RecipeReviewCard extends React.Component {
+  truncate(title, length){
+    return title.substring(0, length);
+  }
+
   render() {
     const { classes, posts } = this.props;
-
     return (
       <Grid container spacing={24}>
       {this.props.posts.map(item =>
         <Grid item xs={4} key={item.id}>
           <Card className={classes.card}>
             <CardHeader
-            title={item.title}
+            title={this.truncate(item.title, 100)}
           />
           <CardContent>
             <Typography paragraph>
-              {item.selftext}
+              {this.truncate(item.selftext,700)}
             </Typography>
           </CardContent>
           <CardActions className={classes.actions} disableActionSpacing>
