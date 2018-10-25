@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   z-index: 1;
-  background-color: $yellow;
+  background-color: $blue;
   height: $footerHeight;
 }
 
@@ -26,11 +26,11 @@
 }
 
 .fa-heart, .fa-coffee {
-	font-size: 30px;
+	font-size: 25px;
 }
 
 .fa-coffee {
-	color: $blue;
+	color: $yellow;
 }
 
 .fa-heart {
