@@ -72,12 +72,16 @@ class Reddits extends React.Component {
     }));
   }
 
+  capitalize(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
   render() {
     return (
       <div>
         <Filter keyword={this.getKeyword} />
         <section className="section">
-          <h1> {this.state.category} reddits </h1>
+          <h1 className="section-heading"> {this.capitalize(this.state.category)} reddits </h1>
           <Card posts={this.state.posts} />
           {this.state.loading ? this.renderLoading() : this.renderPosts()}
         </section>
