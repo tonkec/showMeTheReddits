@@ -1,22 +1,24 @@
 .header {
-	background-color: $green;
-	height: 60vh;
-	text-align: center;
-	position: relative;
-  z-index: 2;
+	background-color: #2ec4b6;
+    height: 70vh;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    transform: skewY(-2deg) translateY(-10vh);
+    z-index: 4;
 
 	.wrapper {
 		position: relative;
 		top: 50%;
-		-webkit-transform: translateY(-50%);
-		   -moz-transform: translateY(-50%);
-		    -ms-transform: translateY(-50%);
-		     -o-transform: translateY(-50%);
-		        transform: translateY(-50%);
+		-webkit-transform: translateY(-5%) skewY(2deg);
+		   -moz-transform: translateY(-5%) skewY(2deg);
+		    -ms-transform: translateY(-5%) skewY(2deg);
+		     -o-transform: translateY(-5%) skewY(2deg);
+		        transform: translateY(-5%) skewY(2deg);
 	}
 
 	h1 {
-		font-size: 45px;
+		font-size: 40px;
 		margin-bottom:25px;
 		color: $white;
 	}
@@ -30,7 +32,7 @@
 	width: 30%;
 	margin: 0 auto;
 	background-color: #fafafa;
-	font-size:25px;
+	font-size:22px;
 	vertical-align: middle;
 
 	&:focus {
@@ -44,7 +46,7 @@
 	border-bottom-right-radius: 5px;
 	padding: 0 25px;
 	border: none;
-	height: 50px;
+	height: 48px;
 	background-color: $blue;
 	vertical-align: middle;
 	&:focus {

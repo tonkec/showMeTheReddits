@@ -11,10 +11,10 @@ library.add(faSearch, faCoffee, faHeart)
 class ShowMeAReddit extends React.Component {
   render(){
     return(
-      <main>
+      <div>
         <Reddits />
         <Footer />
-      </main>
+      </div>
     )
   }
 }

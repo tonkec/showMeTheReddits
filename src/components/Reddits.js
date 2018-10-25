@@ -18,12 +18,12 @@ class Reddits extends React.Component {
   }
 
   componentDidMount(){
-    this.getPosts(this.state.category)
+    this.getPosts(this.state.category);
   }
 
   componentWillUpdate(nextProps, nextState) {
     if (this.state.category !== nextState.category) {
-      this.getPosts(nextState.category)
+      this.getPosts(nextState.category);
     }
   }
 
@@ -78,14 +78,14 @@ class Reddits extends React.Component {
 
   render() {
     return (
-      <div>
+      <main className="main">
         <Filter keyword={this.getKeyword} />
         <section className="section">
           <h1 className="section-heading"> {this.capitalize(this.state.category)} reddits </h1>
           <Card posts={this.state.posts} />
           {this.state.loading ? this.renderLoading() : this.renderPosts()}
         </section>
-      </div>
+      </main>
     );
   }
 }

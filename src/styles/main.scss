@@ -1,7 +1,8 @@
-@import "base/base";
+@import "base/reset";
 @import "base/palette";
+@import "base/base";
 
-$footerHeight: 150px;
+$footerHeight: 250px;
 @import "components/header";
 @import "components/footer";
 @import "components/section";
