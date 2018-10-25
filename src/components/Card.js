@@ -12,7 +12,11 @@ import red from '@material-ui/core/colors/red';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-import Grid from '@material-ui/core/Grid';
+import Masonry from 'react-masonry-component';
+
+const masonryOptions = {
+    transitionDuration: 10
+};
 
 const styles = theme => ({
   card: {
@@ -20,47 +24,55 @@ const styles = theme => ({
   },
   actions: {
     display: 'flex',
+  },
+  masonry: {
+    marginBottom: "20px"
   }
 });
 
-class RecipeReviewCard extends React.Component {
-  truncate(title, length){
-    return title.substring(0, length);
-  }
+class RedditCard extends React.Component {
 
   render() {
     const { classes, posts } = this.props;
-    return (
-      <Grid container spacing={24}>
-      {this.props.posts.map(item =>
-        <Grid item xs={4} key={item.id}>
-          <Card className={classes.card}>
-            <CardHeader
-            title={this.truncate(item.title, 100)}
+    const childElements = this.props.posts.map(function(item, i){
+      return (
+        <Card className={classes.card} key={i}>
+          <CardHeader
+            title={item.title.substring(0, 100)}
           />
           <CardContent>
             <Typography paragraph>
-              {this.truncate(item.selftext,700)}
+              {item.selftext.substring(0, 300)}
             </Typography>
           </CardContent>
           <CardActions className={classes.actions} disableActionSpacing>
-          <IconButton aria-label="Add to favorites">
-            <FavoriteIcon />
-          </IconButton>
-          <IconButton aria-label="Share">
-            <ShareIcon />
-          </IconButton>
-        </CardActions>
-          </Card>
-        </Grid>
-      )}
-      </Grid>
-    )
+            <IconButton aria-label="Add to favorites">
+              <FavoriteIcon />
+            </IconButton>
+            <IconButton aria-label="Share">
+              <ShareIcon />
+            </IconButton>
+          </CardActions>
+        </Card> 
+      );
+  });
+    
+  return (
+    <Masonry
+      className={'reddits'} // default ''
+      style={styles.masonry}
+      options={masonryOptions} // default {}
+      disableImagesLoaded={false} // default false
+      updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
+      >
+        {childElements}
+      </Masonry>
+    );
   }
 }
 
-RecipeReviewCard.propTypes = {
+RedditCard.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(RecipeReviewCard);
+export default withStyles(styles)(RedditCard);
