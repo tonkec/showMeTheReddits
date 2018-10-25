@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import Filter from './Filter';
-import SimpleExpansionPanel from './SimpleExpansionPanel';
+import Card from './Card';
 
 class Reddits extends React.Component {
   constructor(props) {
@@ -77,9 +77,8 @@ class Reddits extends React.Component {
       <div>
         <Filter keyword={this.getKeyword} />
         <section className="section">
-          
           <h1> {this.state.category} reddits </h1>
-          <SimpleExpansionPanel posts = {this.state.posts} />
+          <Card posts={this.state.posts} />
           {this.state.loading ? this.renderLoading() : this.renderPosts()}
         </section>
       </div>
