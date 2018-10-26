@@ -1,14 +1,11 @@
 .section {
-	position: relative;
-	z-index: 2;
-	margin-bottom: $footerHeight;
-	background-color: $white;
-	padding:0 30px 100px;
-	min-height: 300px;
+  background-color: $white;
+  padding: 0 30px 100px;
+  min-height: 300px;
 }
 
 .section-heading {
-	text-align: center;
-	font-size: 30px;
-	margin: 0 0 50px;
+  text-align: center;
+  font-size: 30px;
+  margin: 0 0 50px;
 }

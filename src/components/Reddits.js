@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import axios from 'axios';
 import Filter from './Filter';
 import Card from './Card';
+import Cta from './Cta';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class Reddits extends React.Component {
@@ -55,7 +56,7 @@ class Reddits extends React.Component {
     return (
       <div>
         <FontAwesomeIcon icon="frown" />
-        <h1 className="section-heading"> There is no such reddit!</h1>
+        <h1 className="section-heading"> There are no such reddits!</h1>
       </div>
     );
   }
