@@ -4,7 +4,6 @@ import axios from 'axios';
 import Filter from './Filter';
 import Card from './Card';
 
-
 class Reddits extends React.Component {
   constructor(props) {
     super(props);

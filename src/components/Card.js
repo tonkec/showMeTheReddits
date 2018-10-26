@@ -10,12 +10,12 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import red from '@material-ui/core/colors/red';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Masonry from 'react-masonry-component';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const masonryOptions = {
-    transitionDuration: 10
+
+var masonryOptions = {
+  gutter: 4
 };
 
 const styles = theme => ({
@@ -29,31 +29,31 @@ const styles = theme => ({
     marginBottom: "20px"
   }
 });
-
 class RedditCard extends React.Component {
 
   render() {
     const { classes, posts } = this.props;
     const childElements = this.props.posts.map(function(item, i){
       return (
-        <Card className={classes.card} key={i}>
+        <div className="masonry-column" key={i}>
+          <Card className={classes.card}>
           <CardHeader
             title={item.title.substring(0, 100)}
           />
           <CardContent>
             <Typography paragraph>
-              {item.selftext.substring(0, 300)}
+              {item.selftext.length>300 ? item.selftext.substring(0, 300) + "..." : item.selftext.substring(0, 300)}
             </Typography>
           </CardContent>
           <CardActions className={classes.actions} disableActionSpacing>
-            <IconButton aria-label="Add to favorites">
-              <FavoriteIcon />
-            </IconButton>
-            <IconButton aria-label="Share">
-              <ShareIcon />
+            <IconButton aria-label="External">
+              <a href={item.url} target="_blank" className="external-link">
+                <FontAwesomeIcon icon="external-link-square-alt" />
+              </a>
             </IconButton>
           </CardActions>
         </Card> 
+        </div>
       );
   });
     
