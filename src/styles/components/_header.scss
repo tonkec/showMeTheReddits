@@ -49,6 +49,10 @@
 	height: 56px;
 	background-color: $blue;
 	vertical-align: middle;
+	&:disabled {
+		cursor: auto;
+		background-color: grey;
+	}
 	&:focus {
 		outline: none;
 	}
