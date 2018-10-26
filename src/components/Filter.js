@@ -13,7 +13,6 @@ class Filter extends React.Component {
 
   handleInputChange(evt) {
     this.setState({ keyword: evt.target.value });
-    console.log(this.state.keyword)
   }
 
   render(){

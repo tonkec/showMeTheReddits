@@ -5,8 +5,8 @@ import Footer from './components/Footer';
 import './styles/main.scss';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch, faCoffee, faHeart, faExternalLinkSquareAlt} from '@fortawesome/free-solid-svg-icons'
-library.add(faSearch, faCoffee, faHeart, faExternalLinkSquareAlt);
+import { faSearch, faCoffee, faHeart, faExternalLinkSquareAlt, faFrown} from '@fortawesome/free-solid-svg-icons'
+library.add(faSearch, faCoffee, faHeart, faExternalLinkSquareAlt, faFrown);
 
 class ShowMeAReddit extends React.Component {
   render(){

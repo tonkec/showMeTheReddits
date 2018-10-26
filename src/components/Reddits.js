@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import axios from 'axios';
 import Filter from './Filter';
 import Card from './Card';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class Reddits extends React.Component {
   constructor(props) {
@@ -30,13 +31,13 @@ class Reddits extends React.Component {
   getPosts(category){
     axios.get(`http://www.reddit.com/r/${category}.json`)
       .then(res => {
-        const data = res.data.data.children.map(obj => obj.data);
-        const posts = data.filter(obj => obj.selftext !== "");
-        this.setState({
-          posts: posts,
-          loading: false,
-          error: null
-        });
+          const data = res.data.data.children.map(obj => obj.data);
+          const posts = data.filter(obj => obj.selftext !== "");
+          this.setState({
+            posts: posts,
+            loading: false,
+            error: null
+          });
       })
       .catch(err => {
         this.setState({
@@ -53,7 +54,8 @@ class Reddits extends React.Component {
   renderError() {
     return (
       <div>
-        Uh oh: {this.state.error.message}
+        <FontAwesomeIcon icon="frown" />
+        <h1 className="section-heading"> There is no such reddit!</h1>
       </div>
     );
   }
@@ -61,12 +63,21 @@ class Reddits extends React.Component {
   renderPosts() {
     if(this.state.error) {
       return this.renderError();
+    } else {
+      return (
+        <div>
+          <h1 className="section-heading"> 
+            {this.capitalize(this.state.category)} reddits
+          </h1>
+          <Card posts={this.state.posts} />
+        </div>
+      )
     }
   }
   
   getKeyword(e, keyword){
     e.preventDefault();
-    keyword = e.target.elements.keyword.value.trim();
+    keyword = e.target.elements.keyword.value.toLowerCase().trim();
     this.setState(() => ({
       category: keyword
     }));
@@ -81,9 +92,9 @@ class Reddits extends React.Component {
       <main className="main">
         <Filter keyword={this.getKeyword} />
         <section className="section">
-          <h1 className="section-heading"> {this.capitalize(this.state.category)} reddits </h1>
-          <Card posts={this.state.posts} />
-          {this.state.loading ? this.renderLoading() : this.renderPosts()}
+          <h1 className="section-heading"> 
+            {this.state.loading ? this.renderLoading() : this.renderPosts()}
+          </h1>
         </section>
       </main>
     );
