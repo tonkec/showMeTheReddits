@@ -36,7 +36,8 @@ class Filter extends React.Component {
               disabled={!isEnabled}
               className="btn-search"
               >
-                <FontAwesomeIcon icon="search" />
+                <FontAwesomeIcon icon="search" className="hidden-xs" />
+                <span> Show me! </span>
               </button>
             </form>
         </div>

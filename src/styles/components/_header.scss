@@ -1,6 +1,6 @@
 .header {
 	background-color: #2ec4b6;
-  height: 70vh;
+  height: 55vh;
   text-align: center;
   position: relative;
   z-index: 2;
@@ -8,6 +8,7 @@
   z-index: 4;
 
 	.wrapper {
+		padding: 0 50px;
 		position: relative;
 		top: 50%;
 		-webkit-transform: translateY(-5%) skewY(2deg);
@@ -16,24 +17,48 @@
 		     -o-transform: translateY(-5%) skewY(2deg);
 		        transform: translateY(-5%) skewY(2deg);
 	}
+	@media (min-width: 540px) {
+		padding: 0 20px;
+	}
 
 	h1 {
-		font-size: 40px;
-		margin-bottom:25px;
+		font-size: 30px;
+		margin-bottom:20px;
 		color: $white;
+		@media (min-width: 768px) {
+			font-size: 40px;		
+			margin-bottom:25px;
+		}
+
 	}
 }
 
 .input-search {
 	border: none;
-	border-top-left-radius: 5px;
-	border-bottom-left-radius: 5px;
-	padding: 15px;
-	width: 30%;
-	margin: 0 auto;
 	background-color: #fafafa;
-	font-size:22px;
+	font-size: 15px;
 	vertical-align: middle;
+	width: 100%;
+	padding: 10px 0 10px 0px;
+	box-sizing: border-box;
+  text-align: center;
+	@media (min-width: 540px) {
+		border-top-left-radius: 5px;
+	  border-bottom-left-radius: 5px;
+	  width: 60%;
+	  padding: 15px;
+	  font-size: 22px;
+	  text-align: left;
+	}
+
+	@media (min-width: 768px) {
+		width: 70%;
+	}
+
+	@media (min-width: 992px) {
+	  width: 30%;
+	  margin: 0 auto;
+	}
 
 	&:focus {
 		outline: none;
@@ -44,17 +69,35 @@
 	cursor: pointer;
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;
-	padding: 0 25px;
+	padding: 0 20px;
 	border: none;
-	height: 56px;
+	height: 40px;
 	background-color: $blue;
 	vertical-align: middle;
+	display: block;
+	width: 100%;
 	&:disabled {
 		cursor: auto;
 		background-color: grey;
 	}
 	&:focus {
 		outline: none;
+	}
+
+	@media (min-width: 540px) {
+		height: 56px;
+		display: inline;
+		width: auto;
+	}
+
+	span {
+		text-align: center;
+		color: $white;
+		font-size: 15px;
+		@media (min-width: 540px) {
+			display: none;
+		}
+
 	}
 }
 

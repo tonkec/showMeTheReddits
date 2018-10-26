@@ -10,17 +10,14 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import red from '@material-ui/core/colors/red';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import Masonry from 'react-masonry-component';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Grid from '@material-ui/core/Grid';
 
-
-var masonryOptions = {
-  gutter: 4
-};
 
 const styles = theme => ({
   card: {
     maxWidth: 400,
+    margin: "0 auto 20px"
   },
   actions: {
     display: 'flex',
@@ -33,46 +30,38 @@ class RedditCard extends React.Component {
 
   render() {
     const { classes, posts } = this.props;
-    const childElements = this.props.posts.map(function(item, i){
-      return (
-        <div className="masonry-column" key={i}>
-          <Card className={classes.card}>
-          <CardHeader
-            title={item.title.substring(0, 100)}
-          />
-          <CardContent>
-            <Typography paragraph>
-              {item.selftext.length>300 ? item.selftext.substring(0, 300) + "..." : item.selftext.substring(0, 300)}
-            </Typography>
-          </CardContent>
-          <CardActions className={classes.actions} disableActionSpacing>
-            <IconButton aria-label="External">
-              <a href={item.url} target="_blank" className="external-link">
-                <FontAwesomeIcon icon="external-link-square-alt" />
-              </a>
-            </IconButton>
-          </CardActions>
-        </Card> 
-        </div>
-      );
-  });
-    
-  return (
-    <Masonry
-      className={'reddits'} // default ''
-      style={styles.masonry}
-      options={masonryOptions} // default {}
-      disableImagesLoaded={false} // default false
-      updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
-      >
-        {childElements}
-      </Masonry>
-    );
+    return(
+      <Grid container spacing={24}>
+        {this.props.posts.map((post, i) =>
+          <Grid item xs={12} md={6} lg={4} className="reddit-column" key={i}>
+            <Card className={classes.card}>
+            <CardHeader
+              title={post.title.substring(0, 100)}
+            />
+            <CardContent>
+              <Typography paragraph>
+                {post.selftext.length>300 ? post.selftext.substring(0, 300) + "..." : post.selftext.substring(0, 300)}
+              </Typography>
+            </CardContent>
+            <CardActions className={classes.actions} disableActionSpacing>
+              <IconButton aria-label="External">
+                <a href={post.url} target="_blank" className="external-link">
+                  <FontAwesomeIcon icon="external-link-square-alt" />
+                </a>
+              </IconButton>
+            </CardActions>
+          </Card> 
+        </Grid>
+        )}
+      </Grid>
+    )
+  
   }
 }
 
 RedditCard.propTypes = {
   classes: PropTypes.object.isRequired,
 };
+
 
 export default withStyles(styles)(RedditCard);

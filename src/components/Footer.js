@@ -19,7 +19,6 @@ class Footer extends React.Component {
             </h4>
             <p>  
               <a href="https://github.com/tonkec" target="_blank" className="footer-anchor ">Antonija Simic</a> 
-              <span className="copyright"> &copy;2018 </span>
             </p>
           </Grid>
         </Grid>
