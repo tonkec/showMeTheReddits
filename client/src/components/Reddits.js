@@ -1,9 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import axios from 'axios';
 import Filter from './Filter';
 import Card from './Card';
-import Cta from './Cta';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class Reddits extends React.Component {
@@ -30,7 +28,7 @@ class Reddits extends React.Component {
   }
 
   getPosts(category){
-    axios.get(`http://www.reddit.com/r/${category}.json`)
+    axios.get(`https://www.reddit.com/r/${category}.json`)
       .then(res => {
           const data = res.data.data.children.map(obj => obj.data);
           const posts = data.filter(obj => obj.selftext !== "");

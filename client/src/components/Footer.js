@@ -1,13 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Grid from '@material-ui/core/Grid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const styles = {
-  root: {
-    flexGrow: 1
-  }
-}
 class Footer extends React.Component {
   render(){
     return(
@@ -21,9 +15,7 @@ class Footer extends React.Component {
               <a href="https://github.com/tonkec" target="_blank" className="footer-anchor ">Antonija Simic</a> 
             </p>
           </Grid>
-        </Grid>
-
-        	
+        </Grid> 	
       </footer>
     )
   }

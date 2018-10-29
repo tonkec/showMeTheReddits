@@ -1,14 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Reddits from './components/Reddits';
 import Footer from './components/Footer';
-import './styles/main.scss';
+import './App.scss';
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faCoffee, faHeart, faExternalLinkSquareAlt, faFrown} from '@fortawesome/free-solid-svg-icons'
 library.add(faSearch, faCoffee, faHeart, faExternalLinkSquareAlt, faFrown);
-
-class ShowMeAReddit extends React.Component {
+class App extends React.Component {
   render(){
     return(
       <div>
@@ -19,7 +16,4 @@ class ShowMeAReddit extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <ShowMeAReddit />,
-  document.getElementById('root')
-);
+export default App;
