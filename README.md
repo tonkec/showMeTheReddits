@@ -8,3 +8,5 @@ Filter your favorite reddits!
  * Axios
  * MaterialUi
  * Font Awesome
+
+#### Check out the trello [board](https://trello.com/b/byKLzAbw/show-me-the-reddits)
