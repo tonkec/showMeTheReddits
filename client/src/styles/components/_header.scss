@@ -66,8 +66,6 @@
 
 .btn-search {
 	cursor: pointer;
-	border-top-right-radius: 5px;
-	border-bottom-right-radius: 5px;
 	padding: 0 20px;
 	border: none;
 	height: 40px;
@@ -84,6 +82,8 @@
 	}
 
 	@media (min-width: 540px) {
+		border-top-right-radius: 5px;
+	  border-bottom-right-radius: 5px;
 		height: 56px;
 		display: inline;
 		width: auto;
